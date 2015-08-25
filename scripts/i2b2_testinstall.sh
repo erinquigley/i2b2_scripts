@@ -2,18 +2,15 @@
 
 ###########
 echo "[./i2b2_prereqs.sh] begin"
-###########
-# become root
-###########
-sudo su - 
+
 ###########
 # yum installs
 ###########
 echo "[./i2b2_prereqs.sh] yum installs"
-yum install java-1.7.0-openjdk.x86_64
-yum install httpd.x86_64
-yum install php.x86_64
-yum install subversion.x86_64
+yum -y install java-1.7.0-openjdk.x86_64
+yum -y install httpd.x86_64
+yum -y install php.x86_64
+yum -y install subversion.x86_64
 service httpd start
 ###########
 # add i2b2 user, i2b2-owned i2b2 directory
@@ -21,14 +18,10 @@ service httpd start
 echo "[./i2b2_prereqs.sh] add i2b2 user"
 adduser i2b2
 mkdir /opt/i2b2
-chown -R i2b2:i2b2 /opt/i2b2
-chmod -R 777 /opt
 ###########
 # become i2b2 user
 ###########
-exit
-echo "[./i2b2_prereqs.sh] become i2b2"
-sudo su - i2b2
+echo "[./i2b2_prereqs.sh] svn SHRINE quick_install directory"
 cd /opt
 svn co https://open.med.harvard.edu/svn/shrine/releases/1.19.2/code/install/i2b2-1.7 quick_install
 cd i2b2
@@ -65,4 +58,5 @@ rm jboss/standalone/deployments/i2b2.war/axis2.zip
 ###########
 cd source
 git clone https://github.com/erinquigley/i2b2_scripts.git
-
+chown -R i2b2:i2b2 /opt/i2b2
+chown -R i2b2:i2b2 /opt/quick_install
