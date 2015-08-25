@@ -2,10 +2,7 @@
 
 ###########
 echo "[./i2b2_prereqs.sh] begin"
-###########
-# become root
-###########
-sudo su - 
+
 ###########
 # yum installs
 ###########
@@ -21,13 +18,10 @@ service httpd start
 echo "[./i2b2_prereqs.sh] add i2b2 user"
 adduser i2b2
 mkdir /opt/i2b2
-chown -R i2b2:i2b2 /opt/i2b2
 ###########
 # become i2b2 user
 ###########
-exit
-echo "[./i2b2_prereqs.sh] become i2b2"
-sudo su - i2b2
+echo "[./i2b2_prereqs.sh] svn SHRINE quick_install directory"
 cd /opt
 svn co https://open.med.harvard.edu/svn/shrine/releases/1.19.2/code/install/i2b2-1.7 quick_install
 cd i2b2
@@ -42,9 +36,9 @@ wget https://www.i2b2.org/software/projects/installer/axis2-1.6.2-war.zip
 ###########
 # unzip and remove zip files
 ###########
-unzip jboss-as-7.1.1.Final.zip
-unzip apache-ant-1.8.2-bin.zip
-unzip axis2-1.6.2-war.zip
+unzip -q jboss-as-7.1.1.Final.zip
+unzip -q apache-ant-1.8.2-bin.zip
+unzip -q axis2-1.6.2-war.zip
 rm jboss-as-7.1.1.Final.zip
 rm apache-ant-1.8.2-bin.zip
 rm axis2-1.6.2-war.zip
@@ -57,11 +51,12 @@ mkdir jboss/standalone/deployments/i2b2.war
 touch jboss/standalone/deployments/i2b2.war.dodeploy
 mv axis2.war axis2.zip 
 mv axis2.zip jboss/standalone/deployments/i2b2.war/.
-unzip jboss/standalone/deployments/i2b2.war/axis2.zip
+unzip -q jboss/standalone/deployments/i2b2.war/axis2.zip
 rm jboss/standalone/deployments/i2b2.war/axis2.zip
 ###########
 # Clone the i2b2_scipts repo
 ###########
 cd source
 git clone https://github.com/erinquigley/i2b2_scripts.git
-
+chown -R i2b2:i2b2 /opt/i2b2
+chown -R i2b2:i2b2 /opt/quick_install
