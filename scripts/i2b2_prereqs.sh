@@ -39,24 +39,32 @@ wget https://www.i2b2.org/software/projects/installer/axis2-1.6.2-war.zip
 unzip -q jboss-as-7.1.1.Final.zip
 unzip -q apache-ant-1.8.2-bin.zip
 unzip -q axis2-1.6.2-war.zip
-rm jboss-as-7.1.1.Final.zip
-rm apache-ant-1.8.2-bin.zip
-rm axis2-1.6.2-war.zip
+rm -rf jboss-as-7.1.1.Final.zip
+rm -rf apache-ant-1.8.2-bin.zip
+rm -rf axis2-1.6.2-war.zip
+rm -rf LICENSE.txt
+rm -rf NOTICE.txt
+rm -rf README.txt
+rm -rf release-notes.html
 ###########
 # configure JBoss, i2b2.war, and Ant
 ###########
+echo "Rename jboss and ant directories"
 mv jboss-as-7.1.1.Final jboss
 mv apache-ant-1.8.2 ant
+echo "Create i2b2.war"
 mkdir jboss/standalone/deployments/i2b2.war
 touch jboss/standalone/deployments/i2b2.war.dodeploy
 mv axis2.war axis2.zip 
 mv axis2.zip jboss/standalone/deployments/i2b2.war/.
-unzip -q jboss/standalone/deployments/i2b2.war/axis2.zip
-rm jboss/standalone/deployments/i2b2.war/axis2.zip
+cd jboss/standalone/deployments/i2b2.war/
+unzip -q axis2.zip
+rm -rf axis2.zip
 ###########
 # Clone the i2b2_scipts repo
 ###########
-cd source
+cd /opt/i2b2/source
+echo "Clone the i2b2 Source Code Repo"
 git clone https://github.com/erinquigley/i2b2_scripts.git
 chown -R i2b2:i2b2 /opt/i2b2
 chown -R i2b2:i2b2 /opt/quick_install
