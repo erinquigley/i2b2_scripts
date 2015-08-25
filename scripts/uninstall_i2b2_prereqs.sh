@@ -1,4 +1,5 @@
-#!bin/bash
+#!/bin/bash
+
 echo "[./uninstall_i2b2_prereqs.sh] begin"
 ###########
 # Remove i2b2-owned directories and i2b2 user
