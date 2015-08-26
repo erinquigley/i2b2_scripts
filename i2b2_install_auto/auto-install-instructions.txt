@@ -1,0 +1,17 @@
+auto-install-instructions.txt
+Instructions on using the i2b2 Installer:
+
+1. Edit the i2b2-variables.rc file as the i2b2 user. 
+	a. edit I2B2_VERSION
+	b. edit JBOSS_HOME (path to jboss install)
+	c. edit I2B2_DB_HOME with your database server (format: db-server-name:port:SID)
+	d. edit I2B2_SRC_DIR (path to where your i2b2 source code is located; usually, /opt/i2b2/source)
+2. run install-i2b2.sh (THIS IS DONE AS THE I2B2 USER)
+	a. runs i2b2-src-conf.sh
+		i. this interpolates all the i2b2 cells config files with the variables specified in i2b2-variables.rc
+		ii. it unzips the version of i2b2 (you specified) into I2B2_SRC_DIR
+		iii. it then replaces all the files in your I2B2_SRC_DIR with these new configured files
+	b. runs buildCells.sh
+		i. this builds each i2b2 cell
+	c. run_jboss.sh
+		i. starts JBoss and deploys the cells
