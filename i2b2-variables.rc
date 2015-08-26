@@ -3,11 +3,12 @@
 #
 #The version of I2B2 to install (format 1704, 1705, 1706)
 export I2B2_VERSION=1706
-export I2B2_DIR=/opt/i2b2
-export JBOSS_HOME=${I2B2_DIR}/jboss
+export I2B2_HOME=/opt/i2b2
+export JBOSS_HOME=${I2B2_HOME}/jboss
+export ANT_HOME=${I2B2_HOME}/ant/bin
 export I2B2_DB_HOME=bmic-datamarts-dev.obis.musc.edu:1521:i2bstrk
-export I2B2_HOME=bmic-i2b2-test.obis.musc.edu:8080
-export I2B2_SRC_DIR=${I2B2_DIR}/source
+export I2B2_URL=bmic-i2b2-test.obis.musc.edu:8080
+export I2B2_SRC_DIR=${I2B2_HOME}/source
 export I2B2_SCRIPTS_DIR=/opt/i2b2_scripts
 
 #################################################
