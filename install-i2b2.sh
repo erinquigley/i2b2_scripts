@@ -26,11 +26,13 @@ source ./i2b2-variables.rc
 echo "[./install-i2b2.sh] Your I2B2 Environment Variables (see i2b2-variables.rc)"
 
 ##########
-./i2b2-src-conf.sh
+./build-scripts/i2b2-src-conf.sh
 
-./buildCells.sh
+./build-scripts/buildCells.sh
 
-./run_jboss.sh
+./build-scripts/run-jboss.sh
+cp $I2B2_SCRIPTS_DIR/build-scripts/run-jboss.sh $I2B2_HOME/.
+cp $I2B2_SCRIPTS_DIR/build-scripts/stop-jboss.sh $I2B2_HOME/.
 ##########
 
 ##########

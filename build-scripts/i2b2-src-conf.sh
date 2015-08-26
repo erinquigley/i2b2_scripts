@@ -5,15 +5,14 @@ echo "[./i2b2-src-conf.sh] Begin."
 # Sets up all the files that are needed for the i2b2
 #########
 
-source ./i2b2-variables.rc
-
+source ../i2b2-variables.rc
+source ~/i2b2-variables.rc
 #Extract all the i2b2 source code into the $I2B2_SRC_DIR
-unzip -q $I2B2_SCRIPTS_DIR/Version_$I2B2_VERSION/i2b2core-src-$I2B2_VERSION.zip -d $I2B2_SRC_DIR/.
-unzip -q $I2B2_SCRIPTS_DIR/Version_$I2B2_VERSION/i2b2webclient-$I2B2_VERSION.zip -d $I2B2_SRC_DIR/.
+unzip -q $I2B2_SCRIPTS_DIR/i2b2-source-code/Version_$I2B2_VERSION/i2b2core-src-$I2B2_VERSION.zip -d $I2B2_SRC_DIR/.
+unzip -q $I2B2_SCRIPTS_DIR/i2b2-source-code/Version_$I2B2_VERSION/i2b2webclient-$I2B2_VERSION.zip -d $I2B2_SRC_DIR/.
 
 interpolate_file $I2B2_SCRIPTS_DIR/skel/server-common/build.properties "JBOSS_HOME" "$JBOSS_HOME" > $SERVER_BUILD_PROP_FILE
 interpolate_file $I2B2_SCRIPTS_DIR/skel/pm/build.properties "JBOSS_HOME" "$JBOSS_HOME" > $PM_BUILD_FILE
-
 interpolate_file $I2B2_SCRIPTS_DIR/skel/ont/build.properties "JBOSS_HOME" "$JBOSS_HOME" > $ONT_BUILD_FILE
 interpolate_file $I2B2_SCRIPTS_DIR/skel/crc/build.properties "JBOSS_HOME" "$JBOSS_HOME" > $CRC_BUILD_FILE
 interpolate_file $I2B2_SCRIPTS_DIR/skel/work/build.properties "JBOSS_HOME" "$JBOSS_HOME" > $WORK_BUILD_FILE
@@ -22,13 +21,9 @@ interpolate_file $I2B2_SCRIPTS_DIR/skel/fr/build.properties "JBOSS_HOME" "$JBOSS
 
 #Interpolate the application directory files
 interpolate_file $I2B2_SCRIPTS_DIR/skel/ont/ontology_application_directory.properties "JBOSS_HOME" "$JBOSS_HOME" > $ONT_APP_DIR_FILE
-
 interpolate_file $I2B2_SCRIPTS_DIR/skel/crc/crc_application_directory.properties "JBOSS_HOME" "$JBOSS_HOME" > $CRC_APP_DIR_FILE
-
 interpolate_file $I2B2_SCRIPTS_DIR/skel/work/workplace_application_directory.properties "JBOSS_HOME" "$JBOSS_HOME" > $WORK_APP_DIR_FILE
-
 interpolate_file $I2B2_SCRIPTS_DIR/skel/im/im_application_directory.properties "JBOSS_HOME" "$JBOSS_HOME" > $IM_APP_DIR_FILE
-
 interpolate_file $I2B2_SCRIPTS_DIR/skel/fr/fr_application_directory.properties "JBOSS_HOME" "$JBOSS_HOME" > $FR_APP_DIR_FILE
 
 #Interpolate the edu.harvard.i2b2.fr.properties and the edu.harvard.i2b2.crc.loader.properties files
