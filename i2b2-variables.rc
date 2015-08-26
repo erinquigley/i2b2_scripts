@@ -28,7 +28,7 @@ export CRC_BUILD_FILE=${CRC_SRC_DIR}/build.properties
 export WORK_BUILD_FILE=${WORK_SRC_DIR}/build.properties
 export IM_BUILD_FILE=${IM_SRC_DIR}/build.properties
 export FR_BUILD_FILE=${FR_SRC_DIR}/build.properties
-export BUILD_PROP_FILE=${PM_BUILD_FILE}=${ONT_BUILD_FILE}=${CRC_BUILD_FILE}=${WORK_BUILD_FILE}=${IM_BUILD_FILE}=${FR_BUILD_FILE}
+
 export ONT_APP_DIR_FILE=${ONT_SRC_DIR}/etc/spring/ontology_application_directory.properties
 export CRC_APP_DIR_FILE=${CRC_SRC_DIR}/etc/spring/crc_application_directory.properties
 export WORK_APP_DIR_FILE=${WORK_SRC_DIR}/etc/spring/workplace_application_directory.properties
