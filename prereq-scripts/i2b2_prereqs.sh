@@ -1,5 +1,5 @@
 #!/bin/bash
-
+source ../i2b2-variables.rc
 ###########
 echo "[./i2b2_prereqs.sh] begin"
 
@@ -62,12 +62,6 @@ cd jboss/standalone/deployments/i2b2.war/
 unzip -q axis2.zip
 rm -rf axis2.zip
 ###########
-# Clone the i2b2_scipts repo
-###########
-#cd /opt/i2b2/source
-#echo "Clone the i2b2 Source Code Repo"
-#git clone https://github.com/erinquigley/i2b2_scripts.git
-###########
 # Change permissions and ownership of directories
 ###########
 chown -R i2b2:i2b2 /opt/i2b2
@@ -76,3 +70,14 @@ chown -R i2b2:i2b2 /opt/i2b2_scripts
 chmod -R 777 /opt/i2b2
 chmod -R 777 /opt/quick_install
 chmod -R 777 /opt/i2b2_scripts
+###########
+# Move the webclient directory to /var/www/html/
+###########
+echo "Get the webclient directory configured"
+unzip -q $I2B2_SCRIPTS_DIR/i2b2-source-code/Version_$I2B2_VERSION/i2b2webclient-$I2B2_VERSION.zip -d $WEBCLIENT_DIR/.
+#Interpolate the webclient i2b2_config_data.js file
+interpolate_file $I2B2_SCRIPTS_DIR/skel/i2b2_config_data.js "I2B2_URL" "$I2B2_URL" > $WEBCLIENT_DATA_FILE
+chown -R root:root $WEBCLIENT_DIR/webclient
+chmod -R 777 $WEBCLIENT_DIR/webclient
+echo "[./i2b2_prereqs.sh] finished"
+
