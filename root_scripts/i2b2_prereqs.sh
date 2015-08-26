@@ -63,8 +63,15 @@ rm -rf axis2.zip
 ###########
 # Clone the i2b2_scipts repo
 ###########
-cd /opt/i2b2/source
-echo "Clone the i2b2 Source Code Repo"
-git clone https://github.com/erinquigley/i2b2_scripts.git
+#cd /opt/i2b2/source
+#echo "Clone the i2b2 Source Code Repo"
+#git clone https://github.com/erinquigley/i2b2_scripts.git
+###########
+# Change permissions and ownership of directories
+###########
 chown -R i2b2:i2b2 /opt/i2b2
 chown -R i2b2:i2b2 /opt/quick_install
+chown -R i2b2:i2b2 /opt/i2b2_scripts
+chmod -R 777 /opt/i2b2
+chmod -R 777 /opt/quick_install
+chmod -R 777 /opt/i2b2_scripts

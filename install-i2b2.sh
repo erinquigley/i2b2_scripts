@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #########
-echo "[i2b2_install_auto/install-i2b2.sh] begin."
+echo "[./install-i2b2.sh] begin."
 #########
 #
 # I2B2 Installer (THIS MUST BE RUN AS THE i2b2 USER!!!!!!!!!!!!!!)
@@ -23,7 +23,7 @@ source ./i2b2-variables.rc
 #chmod +x *.sh
 
 #########
-echo "[i2b2_install_auto/install-i2b2.sh] Your I2B2 Environment Variables (see i2b2-variables.rc)"
+echo "[./install-i2b2.sh] Your I2B2 Environment Variables (see i2b2-variables.rc)"
 
 ##########
 ./i2b2-src-conf.sh
@@ -34,5 +34,5 @@ echo "[i2b2_install_auto/install-i2b2.sh] Your I2B2 Environment Variables (see i
 ##########
 
 ##########
-echo "[i2b2_install_auto/install-i2b2.sh] done."
+echo "[./install-i2b2.sh] done."
 ##########
