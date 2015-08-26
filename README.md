@@ -10,3 +10,4 @@
 4. Edit the i2b2-variables.rc file in i2b2_scripts/ with your i2b2 installs information
 5. (as i2b2) Run install-i2b2.sh
    ./install-i2b2.sh
+6. webclient
