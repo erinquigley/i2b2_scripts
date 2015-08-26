@@ -5,12 +5,12 @@
 export I2B2_VERSION=1706
 export I2B2_HOME=/opt/i2b2
 export JBOSS_HOME=${I2B2_HOME}/jboss
-export ANT_HOME=${I2B2_HOME}/ant/bin
+export ANT_HOME=${I2B2_HOME}/ant
 export I2B2_DB_HOME=bmic-datamarts-dev.obis.musc.edu:1521:i2bstrk
 export I2B2_URL=bmic-i2b2-test.obis.musc.edu:8080
 export I2B2_SRC_DIR=${I2B2_HOME}/source
 export I2B2_SCRIPTS_DIR=/opt/i2b2_scripts
-
+export PATH=$ANT_HOME/bin:$JBOSS_HOME/bin:$PATH
 #################################################
 # No need to configure anything below this line
 export SERVER_SRC_DIR=${I2B2_SRC_DIR}/edu.harvard.i2b2.server-common
