@@ -32,14 +32,14 @@ interpolate_file $I2B2_SCRIPTS_DIR/skel/im/im_application_directory.properties "
 interpolate_file $I2B2_SCRIPTS_DIR/skel/fr/fr_application_directory.properties "JBOSS_HOME" "$JBOSS_HOME" > $FR_APP_DIR_FILE
 
 #Interpolate the edu.harvard.i2b2.fr.properties and the edu.harvard.i2b2.crc.loader.properties files
-interpolate_file $I2B2_SCRIPTS_DIR/skel/crc/edu.harvard.i2b2.crc.loader.properties "I2B2_HOME" "$I2B2_HOME" > $EDU_CRC_FILE
-interpolate_file $I2B2_SCRIPTS_DIR/skel/fr/edu.harvard.i2b2.fr.properties "I2B2_HOME" "$I2B2_HOME" > $EDU_FR_FILE
+interpolate_file $I2B2_SCRIPTS_DIR/skel/crc/edu.harvard.i2b2.crc.loader.properties "I2B2_URL" "$I2B2_URL" > $EDU_CRC_FILE
+interpolate_file $I2B2_SCRIPTS_DIR/skel/fr/edu.harvard.i2b2.fr.properties "I2B2_URL" "$I2B2_URL" > $EDU_FR_FILE
 
 #Interpolate the ontology.properties, crc.properties, workplace.properties, im.properties files
-interpolate_file $I2B2_SCRIPTS_DIR/skel/ont/ontology.properties "I2B2_HOME" "$I2B2_HOME" > $ONT_PROP_FILE
-interpolate_file $I2B2_SCRIPTS_DIR/skel/crc/crc.properties "I2B2_HOME" "$I2B2_HOME" > $CRC_PROP_FILE
-interpolate_file $I2B2_SCRIPTS_DIR/skel/work/workplace.properties "I2B2_HOME" "$I2B2_HOME" > $WORK_PROP_FILE
-interpolate_file $I2B2_SCRIPTS_DIR/skel/im/im.properties "I2B2_HOME" "$I2B2_HOME" > $IM_PROP_FILE
+interpolate_file $I2B2_SCRIPTS_DIR/skel/ont/ontology.properties "I2B2_URL" "$I2B2_URL" > $ONT_PROP_FILE
+interpolate_file $I2B2_SCRIPTS_DIR/skel/crc/crc.properties "I2B2_URL" "$I2B2_URL" > $CRC_PROP_FILE
+interpolate_file $I2B2_SCRIPTS_DIR/skel/work/workplace.properties "I2B2_URL" "$I2B2_URL" > $WORK_PROP_FILE
+interpolate_file $I2B2_SCRIPTS_DIR/skel/im/im.properties "I2B2_URL" "$I2B2_URL" > $IM_PROP_FILE
 
 #Interpolate the CRCLoaderApplicationContext.xml file
 interpolate_file $I2B2_SCRIPTS_DIR/skel/crc/CRCLoaderApplicationContext.xml "I2B2_DB_HOME" "$I2B2_DB_HOME" > $CRC_LOAD_XML_FILE
@@ -52,7 +52,7 @@ interpolate_file $I2B2_SCRIPTS_DIR/skel/work/work-ds.xml "I2B2_DB_HOME" "$I2B2_D
 interpolate_file $I2B2_SCRIPTS_DIR/skel/im/im-ds.xml "I2B2_DB_HOME" "$I2B2_DB_HOME" > $IM_DS_FILE
 
 #Interpolate the webclient i2b2_config_data.js file
-interpolate_file $I2B2_SCRIPTS_DIR/skel/i2b2_config_data.js "I2B2_HOME" "$I2B2_HOME" > $WEBCLIENT_DATA_FILE
+interpolate_file $I2B2_SCRIPTS_DIR/skel/i2b2_config_data.js "I2B2_URL" "$I2B2_URL" > $WEBCLIENT_DATA_FILE
 
 
 echo "[./i2b2-src-conf.sh] Done."
