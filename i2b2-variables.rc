@@ -3,14 +3,56 @@
 #
 #The version of I2B2 to install (format 1704, 1705, 1706)
 export I2B2_VERSION=1706
-
-export JBOSS_HOME=/opt/i2b2/jboss
-export I2B2_DB_HOME=bmic-test-db.obis.musc.edu:1521:testdb
+export I2B2_DIR=/opt/i2b2
+export JBOSS_HOME=${I2B2_DIR}/jboss
+export I2B2_DB_HOME=bmic-datamarts-dev.obis.musc.edu:1521:i2bstrk
 export I2B2_HOME=bmic-i2b2-test.obis.musc.edu:8080
-export I2B2_WAR=i2b2.war
-export I2B2_SRC_DIR=/opt/i2b2/source
-#Utility functions follow
+export I2B2_SRC_DIR=${I2B2_DIR}/source
+export I2B2_SCRIPTS_DIR=/opt/i2b2_scripts
 
+#################################################
+# No need to configure anything below this line
+export SERVER_SRC_DIR=${I2B2_SRC_DIR}/edu.harvard.i2b2.server-common
+export PM_SRC_DIR=${I2B2_SRC_DIR}/edu.harvard.i2b2.pm
+export ONT_SRC_DIR=${I2B2_SRC_DIR}/edu.harvard.i2b2.ontology
+export CRC_SRC_DIR=${I2B2_SRC_DIR}/edu.harvard.i2b2.crc
+export WORK_SRC_DIR=${I2B2_SRC_DIR}/edu.harvard.i2b2.workplace
+export IM_SRC_DIR=${I2B2_SRC_DIR}/edu.harvard.i2b2.im
+export FR_SRC_DIR=${I2B2_SRC_DIR}/edu.harvard.i2b2.fr
+
+export SERVER_BUILD_PROP_FILE=${SERVER_SRC_DIR}/build.properties
+export PM_BUILD_FILE=${PM_SRC_DIR}/build.properties
+export ONT_BUILD_FILE=${ONT_SRC_DIR}/build.properties
+export CRC_BUILD_FILE=${CRC_SRC_DIR}/build.properties
+export WORK_BUILD_FILE=${WORK_SRC_DIR}/build.properties
+export IM_BUILD_FILE=${IM_SRC_DIR}/build.properties
+export FR_BUILD_FILE=${FR_SRC_DIR}/build.properties
+export BUILD_PROP_FILE=${PM_BUILD_FILE}=${ONT_BUILD_FILE}=${CRC_BUILD_FILE}=${WORK_BUILD_FILE}=${IM_BUILD_FILE}=${FR_BUILD_FILE}
+export ONT_APP_DIR_FILE=${ONT_SRC_DIR}/etc/spring/ontology_application_directory.properties
+export CRC_APP_DIR_FILE=${CRC_SRC_DIR}/etc/spring/crc_application_directory.properties
+export WORK_APP_DIR_FILE=${WORK_SRC_DIR}/etc/spring/workplace_application_directory.properties
+export IM_APP_DIR_FILE=${IM_SRC_DIR}/etc/spring/im_application_directory.properties
+export FR_APP_DIR_FILE=${FR_SRC_DIR}/etc/spring/fr_application_directory.properties
+
+export EDU_CRC_FILE=${CRC_SRC_DIR}/etc/spring/edu.harvard.i2b2.crc.loader.properties
+export EDU_FR_FILE=${FR_SRC_DIR}/etc/spring/edu.harvard.i2b2.fr.properties
+
+export ONT_PROP_FILE=${ONT_SRC_DIR}/etc/spring/ontology.properties
+export CRC_PROP_FILE=${CRC_SRC_DIR}/etc/spring/crc.properties
+export WORK_PROP_FILE=${WORK_SRC_DIR}/etc/spring/workplace.properties
+export IM_PROP_FILE=${IM_SRC_DIR}/etc/spring/im.properties
+
+export CRC_LOAD_XML_FILE=${CRC_SRC_DIR}/etc/spring/CRCLoaderApplicationContext.xml
+
+export PM_DS_FILE=${PM_SRC_DIR}/etc/jboss/pm-ds.xml
+export ONT_DS_FILE=${ONT_SRC_DIR}/etc/jboss/ont-ds.xml
+export CRC_DS_FILE=${CRC_SRC_DIR}/etc/jboss/crc-ds.xml
+export WORK_DS_FILE=${WORK_SRC_DIR}/etc/jboss/work-ds.xml
+export IM_DS_FILE=${IM_SRC_DIR}/etc/jboss/im-ds.xml
+
+export WEBCLIENT_DATA_FILE=${I2B2_SRC_DIR}/webclient/i2b2_config_data.js
+
+#Utility functions follow
 function require()
 {
   if [ -z "$1" ] ; then
