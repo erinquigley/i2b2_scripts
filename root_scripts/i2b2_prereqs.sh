@@ -8,6 +8,7 @@ echo "[./i2b2_prereqs.sh] begin"
 ###########
 echo "[./i2b2_prereqs.sh] yum installs"
 yum -y install java-1.7.0-openjdk.x86_64
+yum -y install java-1.7.0-openjdk-devel.x86_64
 yum -y install httpd.x86_64
 yum -y install php.x86_64
 yum -y install subversion.x86_64
