@@ -2,9 +2,7 @@
 #database-fill.sh
 #Runs the ant scripts for every schema in the i2b2 Database
 source ~/i2b2-variables.rc
-source ~/interpolate-i2b2.rc
 source $I2B2_SCRIPTS_DIR/i2b2-variables.rc
-source $I2B2_SCRIPTS_DIR/interpolate-i2b2.rc
 #Build CRCData in Database
 cd $CRCDATA_DIR
 $ANT_HOME/bin/ant –f data_build.xml create_crcdata_tables_release_1-7

@@ -15,8 +15,6 @@ echo "[./install-i2b2.sh] begin."
 #########
 cp i2b2-variables.rc ~/.
 source ./i2b2-variables.rc
-source ./interpolate-i2b2.rc
-cp interpolate-i2b2.rc ~/.
 #########
 
 #rm -rf $SHRINE_HOME
