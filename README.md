@@ -1,5 +1,6 @@
 # i2b2_scripts
-This automates an i2b2 install down to a few steps and very little configuration.
+This automates a generic i2b2 install down to a few steps and very little configuration. It installs, configures and deploys the demo versions of the i2b2 cells. (Note: This assumes that a database has already been set up for the i2b2 instance)
+
 On the server:
 
 1. (as root) Pull down the i2b2_scripts repo into /opt                                 
