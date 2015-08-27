@@ -62,15 +62,6 @@ cd jboss/standalone/deployments/i2b2.war/
 unzip -q axis2.zip
 rm -rf axis2.zip
 ###########
-# Change permissions and ownership of directories
-###########
-chown -R i2b2:i2b2 /opt/i2b2
-chown -R i2b2:i2b2 /opt/quick_install
-chown -R i2b2:i2b2 /opt/i2b2_scripts
-chmod -R 777 /opt/i2b2
-chmod -R 777 /opt/quick_install
-chmod -R 777 /opt/i2b2_scripts
-###########
 # Move the webclient directory to /var/www/html/
 ###########
 echo "Get the webclient directory configured"
@@ -79,5 +70,15 @@ unzip -q $I2B2_SCRIPTS_DIR/i2b2-source-code/Version_$I2B2_VERSION/i2b2webclient-
 interpolate_file $I2B2_SCRIPTS_DIR/skel/i2b2_config_data.js "I2B2_URL" "$I2B2_URL" > $WEBCLIENT_DATA_FILE
 chown -R root:root $WEBCLIENT_DIR/webclient
 chmod -R 777 $WEBCLIENT_DIR/webclient
+###########
+# Change permissions and ownership of directories
+###########
+echo "Change permissions and ownership of directories"
+chown -R i2b2:i2b2 /opt/i2b2
+chown -R i2b2:i2b2 /opt/quick_install
+chown -R i2b2:i2b2 /opt/i2b2_scripts
+chmod -R 777 /opt/i2b2
+chmod -R 777 /opt/quick_install
+chmod -R 777 /opt/i2b2_scripts
 echo "[./i2b2_prereqs.sh] finished"
 
