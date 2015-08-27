@@ -1,5 +1,5 @@
 source ~/i2b2-variables.rc
-source ../i2b2-variables.rc
+source $I2B2_SCRIPTS_DIR/i2b2-variables.rc
 ###########
 echo "[./buildCells.sh] build cells"
 ###########
