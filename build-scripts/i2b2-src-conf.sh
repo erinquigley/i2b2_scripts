@@ -40,15 +40,15 @@ interpolate_file $I2B2_SCRIPTS_DIR/skel/work/workplace.properties "I2B2_URL" "$I
 interpolate_file $I2B2_SCRIPTS_DIR/skel/im/im.properties "I2B2_URL" "$I2B2_URL" > $IM_PROP_FILE
 
 #Interpolate the CRCLoaderApplicationContext.xml file
-interpolate_file $I2B2_SCRIPTS_DIR/skel/crc/CRCLoaderApplicationContext.xml "I2B2_DB_HOME" "$I2B2_DB_HOME" > $CRC_LOAD_XML_FILE
+interpolate_file $I2B2_SCRIPTS_DIR/skel/crc/CRCLoaderApplicationContext.xml "I2B2_DB" "$I2B2_DB" > $CRC_LOAD_XML_FILE
 
 #Interpolate the Datasource Files
 echo "Configure the datasource xml files"
-interpolate_file $I2B2_SCRIPTS_DIR/skel/pm/pm-ds.xml "I2B2_DB_HOME" "$I2B2_DB_HOME" > $PM_DS_FILE
-interpolate_file $I2B2_SCRIPTS_DIR/skel/ont/ont-ds.xml "I2B2_DB_HOME" "$I2B2_DB_HOME" > $ONT_DS_FILE
-interpolate_file $I2B2_SCRIPTS_DIR/skel/crc/crc-ds.xml "I2B2_DB_HOME" "$I2B2_DB_HOME" > $CRC_DS_FILE
-interpolate_file $I2B2_SCRIPTS_DIR/skel/work/work-ds.xml "I2B2_DB_HOME" "$I2B2_DB_HOME" > $WORK_DS_FILE
-interpolate_file $I2B2_SCRIPTS_DIR/skel/im/im-ds.xml "I2B2_DB_HOME" "$I2B2_DB_HOME" > $IM_DS_FILE
+interpolate_file $I2B2_SCRIPTS_DIR/skel/pm/pm-ds.xml "I2B2_DB" "$I2B2_DB" > $PM_DS_FILE
+interpolate_file $I2B2_SCRIPTS_DIR/skel/ont/ont-ds.xml "I2B2_DB" "$I2B2_DB" > $ONT_DS_FILE
+interpolate_file $I2B2_SCRIPTS_DIR/skel/crc/crc-ds.xml "I2B2_DB" "$I2B2_DB" > $CRC_DS_FILE
+interpolate_file $I2B2_SCRIPTS_DIR/skel/work/work-ds.xml "I2B2_DB" "$I2B2_DB" > $WORK_DS_FILE
+interpolate_file $I2B2_SCRIPTS_DIR/skel/im/im-ds.xml "I2B2_DB" "$I2B2_DB" > $IM_DS_FILE
 
 #Interpolate the webclient i2b2_config_data.js file
 #interpolate_file $I2B2_SCRIPTS_DIR/skel/i2b2_config_data.js "I2B2_URL" "$I2B2_URL" > $WEBCLIENT_DATA_FILE
