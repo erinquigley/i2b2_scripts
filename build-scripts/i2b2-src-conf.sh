@@ -7,6 +7,8 @@ echo "[./i2b2-src-conf.sh] Begin."
 
 source $I2B2_SCRIPTS_DIR/i2b2-variables.rc
 source ~/i2b2-variables.rc
+source $I2B2_SCRIPTS_DIR/interpolate-i2b2.rc
+source ~/interpolate-i2b2.rc
 #Extract all the i2b2 source code into the $I2B2_SRC_DIR
 unzip -q $I2B2_SCRIPTS_DIR/i2b2-source-code/Version_$I2B2_VERSION/i2b2core-src-$I2B2_VERSION.zip -d $I2B2_SRC_DIR/.
 #unzip -q $I2B2_SCRIPTS_DIR/i2b2-source-code/Version_$I2B2_VERSION/i2b2webclient-$I2B2_VERSION.zip -d $I2B2_SRC_DIR/.

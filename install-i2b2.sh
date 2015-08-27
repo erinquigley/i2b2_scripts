@@ -15,6 +15,8 @@ echo "[./install-i2b2.sh] begin."
 #########
 cp i2b2-variables.rc ~/.
 source ./i2b2-variables.rc
+source ./interpolate-i2b2.rc
+cp interpolate-i2b2.rc ~/.
 #########
 
 #rm -rf $SHRINE_HOME
@@ -26,6 +28,14 @@ source ./i2b2-variables.rc
 echo "[./install-i2b2.sh] Your I2B2 Environment Variables (see i2b2-variables.rc)"
 
 ##########
+if [ "$I2B2_DATA_INSTALL" == "Y"]
+then
+./build-scripts/i2b2-data.sh
+./build-scripts/database-fill.sh
+else
+  echo "You have chosen not to build the tables in the i2b2 database."
+fi
+
 ./build-scripts/i2b2-src-conf.sh
 
 ./build-scripts/buildCells.sh

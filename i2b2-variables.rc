@@ -7,6 +7,9 @@ export I2B2_VERSION=1706
 export I2B2_DB=bmic-datamarts-dev.obis.musc.edu:1521:i2bstrk
 export I2B2_URL=bmic-i2b2-test.obis.musc.edu:8080
 export WEBCLIENT_DIR=/var/www/html
+#I2B2_DATA_INSTALL variable needs to be "Y" or "N" choose "Y" if you need the i2b2 data tables built
+#into the database and choose "N" if you do not. 
+export I2B2_DATA_INSTALL="N"
 #################################################
 #################################################
 #################################################

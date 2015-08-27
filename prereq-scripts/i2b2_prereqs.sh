@@ -1,6 +1,8 @@
 #!/bin/bash
 source ../i2b2-variables.rc
 source $I2B2_SCRIPTS_DIR/i2b2-variables.rc
+source ../interpolate-i2b2.rc
+source $I2B2_SCRIPTS_DIR/interpolate-i2b2.rc
 ###########
 echo "[./i2b2_prereqs.sh] begin"
 
