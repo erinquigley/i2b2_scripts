@@ -68,7 +68,7 @@ rm -rf axis2.zip
 echo "Get the webclient directory configured"
 unzip -q $I2B2_SCRIPTS_DIR/i2b2-source-code/Version_$I2B2_VERSION/i2b2webclient-$I2B2_VERSION.zip -d $WEBCLIENT_DIR/.
 #Interpolate the webclient i2b2_config_data.js file
-interpolate_file $I2B2_SCRIPTS_DIR/skel/i2b2_config_data.js "I2B2_URL" "$I2B2_URL" > $WEBCLIENT_DATA_FILE
+interpolate_file $SKEL_DIR/i2b2_config_data.js "I2B2_URL" "$I2B2_URL" > $WEBCLIENT_DATA_FILE
 chown -R root:root $WEBCLIENT_DIR/webclient
 chmod -R 777 $WEBCLIENT_DIR/webclient
 ###########
