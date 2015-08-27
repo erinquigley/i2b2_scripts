@@ -28,7 +28,7 @@ cp interpolate-i2b2.rc ~/.
 echo "[./install-i2b2.sh] Your I2B2 Environment Variables (see i2b2-variables.rc)"
 
 ##########
-if [ "$I2B2_DATA_INSTALL" == "Y"]
+if [ "$I2B2_DATA_INSTALL" == "Y" ]
 then
 ./build-scripts/i2b2-data.sh
 ./build-scripts/database-fill.sh
