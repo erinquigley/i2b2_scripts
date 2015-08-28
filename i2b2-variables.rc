@@ -1,18 +1,33 @@
 #!/bin/bash
+#########################################################
+#Script Name: i2b2-variables.rc
+#Created: August 25, 2015
+#Purpose: Environment Variables for i2b2 Server
+#EDIT: I2B2_VERSION, I2B2_DB, I2B2_URL,WEBCLIENT_DIR,I2B2_DATA_INSTALL,SHRINE_INSTALL,SHRINE_VER
+#########################################################
 
-#i2b2-variables.rc
-#The version of I2B2 to install (format 1704, 1705, 1706)
+#EDIT:The version of I2B2 to install (format 1704, 1705, 1706)
 export I2B2_VERSION=1706
+#EDIT: The database server connection information (format: hostname:port:SID) 
 export I2B2_DB=bmic-datamarts-dev.obis.musc.edu:1521:i2bstrk
+#EDIT: The i2b2 Server hostname (format: host:port)
 export I2B2_URL=bmic-i2b2-test.obis.musc.edu:8080
+#EDIT: The webclient directory location. Note: If you decide to do /var/www you might need to configure your Apache DocumentRoot.
 export WEBCLIENT_DIR=/var/www/html
-#I2B2_DATA_INSTALL variable needs to be "Y" or "N" choose "Y" if you need the i2b2 data tables built
-#into the database and choose "N" if you do not. 
+#EDIT: I2B2_DATA_INSTALL variable needs to be "Y" or "N". 
+#Choose "Y" if you need the i2b2 schemas tables created and built (Demodata,Metadata,Pmdata,Hivedata,Workdata,Imdata)
+#Choose "N" if you do not. 
 export I2B2_DATA_INSTALL="N"
-#################################################
-#################################################
-#################################################
-#################################################
+#EDIT: SHRINE_INSTALL variable needs to be "Y" or "N". 
+#Choose "Y" if you want the SHRINE (quick-install directory) to be downloaded to /opt 
+#Choose "N" if you do not. 
+export SHRINE_INSTALL="Y"
+#EDIT: SHRINE_VER: set it to what version of SHRINE you want downloaded
+export SHRINE_VER=1.19.2
+######################DO NOT EDIT BELOW###########################
+######################DO NOT EDIT BELOW###########################
+######################DO NOT EDIT BELOW###########################
+######################DO NOT EDIT BELOW###########################
 # No need to configure anything below this line
 export SKEL_DIR=${I2B2_SCRIPTS_DIR}/skel/${I2B2_VERSION}
 export I2B2_HOME=/opt/i2b2

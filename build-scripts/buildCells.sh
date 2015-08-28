@@ -1,3 +1,9 @@
+#########################################################
+#Script Name: buildCells.sh
+#Created: August 26, 2015
+#Purpose: Executes the ANT builds for each i2b2 Cell
+#There is no need to edit this file
+#########################################################
 source ~/i2b2-variables.rc
 source $I2B2_SCRIPTS_DIR/i2b2-variables.rc
 ###########

@@ -1,4 +1,12 @@
 #!/bin/bash
+#########################################################
+#Script Name: i2b2-prereqs.sh
+#Created: August 25, 2015
+#Purpose: Installs all the Software Requirements need for an i2b2 install.
+######### This is run as ROOT. It YUM installs JAVA, APACHE, PHP, SUBVERSION (needed if SHRINE_INSTALL="Y")
+######### It also installs JBoss AS v7.1.1, Apache Ant, Axis2, and Shrine (if SHRINE_INSTALL="Y")
+#EDIT: I2B2_VERSION, I2B2_DB, I2B2_URL,WEBCLIENT_DIR,I2B2_DATA_INSTALL
+#########################################################
 source ../i2b2-variables.rc
 source $I2B2_SCRIPTS_DIR/i2b2-variables.rc
 
@@ -15,6 +23,8 @@ yum -y install httpd.x86_64
 yum -y install php.x86_64
 yum -y install subversion.x86_64
 service httpd start
+echo "java-1.7.0-openjdk, java-1.7.0-openjdk-devel, httpd, php, and subversion have been installed"
+echo "httpd has been started"
 ###########
 # add i2b2 user, i2b2-owned i2b2 directory
 ###########
@@ -26,7 +36,14 @@ mkdir /opt/i2b2
 ###########
 echo "[./i2b2_prereqs.sh] svn SHRINE quick_install directory"
 cd /opt
-svn co https://open.med.harvard.edu/svn/shrine/releases/1.19.2/code/install/i2b2-1.7 quick_install
+#Checks to see if the i2b2 Data Installation needs to be done.
+if [ "$SHRINE_INSTALL" == "Y" ]
+then
+svn co https://open.med.harvard.edu/svn/shrine/releases/$SHRINE_VER/code/install/i2b2-1.7 quick_install
+echo "SHRINE quick_install directory has been downloaded to /opt/"
+else
+  echo "You have chosen not to install SHRINE at this time."
+fi
 cd i2b2
 mkdir source
 ###########
@@ -82,5 +99,8 @@ chown -R i2b2:i2b2 /opt/i2b2_scripts
 chmod -R 777 /opt/i2b2
 chmod -R 777 /opt/quick_install
 chmod -R 777 /opt/i2b2_scripts
+echo "JBOSS_HOME is located /opt/i2b2/jboss"
+echo "ANT_HOME is located /opt/i2b2/ant"
+echo "WEBCLIENT_DIR has been configured"
 echo "[./i2b2_prereqs.sh] finished"
 

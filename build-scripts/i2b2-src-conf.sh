@@ -1,10 +1,10 @@
+#########################################################
+#Script Name:i2b2-src-conf.sh
+#Created: August 25, 2015
+#Purpose: Populates all the source code files for each i2b2 Cell
+#There is no need to edit this file
+#########################################################
 echo "[./i2b2-src-conf.sh] Begin."
-
-#########
-# i2b2 Source Code Configuration File Setup
-# Sets up all the files that are needed for the i2b2
-#########
-
 source $I2B2_SCRIPTS_DIR/i2b2-variables.rc
 source ~/i2b2-variables.rc
 

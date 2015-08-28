@@ -1,6 +1,10 @@
+#########################################################
 #!/bin/bash
-#database-fill.sh
-#Runs the ant scripts for every schema in the i2b2 Database
+#Script Name:database-fill.sh
+#Created: August 27, 2015
+#Purpose: Runs the ant builds for the i2b2 schemas for the database
+#There is no need to edit this file
+#########################################################
 source ~/i2b2-variables.rc
 source $I2B2_SCRIPTS_DIR/i2b2-variables.rc
 #Build CRCData in Database
